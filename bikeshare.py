@@ -140,8 +140,14 @@ def station_stats(df):
 
 def split_seconds(ttl_seconds):
     ''' Breaks down seconds into number of hours, minutes and remaining seconds
-        Args: Total amount of seconds
-        Returns: Hours, Minutes, Seconds
+
+        Args:
+            (int) ttl_seconds - Total amount of seconds
+            
+        Returns:
+            (int) hours,
+            (int) minutes
+            (int) seconds
     '''
     hours = ttl_seconds//3600
     minutes = (ttl_seconds//60) - (hours * 60)
