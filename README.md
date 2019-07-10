@@ -11,5 +11,10 @@ This is code to interactively provide the user with statistics on various cities
 ### Files used
 bikeshare.py
 
+### Files used in development
+chicago.csv
+new_york_city.csv
+washington.csv
+
 ### Credits
 Udacity for the Python template
