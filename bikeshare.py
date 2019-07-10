@@ -11,8 +11,14 @@ week_days = ['monday','tuesday','wednesday','thursday','friday','saturday','sund
 
 def get_valid_input(message, valid_values, accept_all=False):
     ''' Prompts user with a message for input until entry is valid
-        Args: Message to display to user, the accepted values, boolean for allowing "All" to be input
-        Returns: the valid input from the user
+
+        Args:
+            (str) message - Message to display to user
+            (list) valid_values - the accepted values
+            (boolean) accept_all - True/False for allowing "All" to be input
+
+        Returns:
+            the valid input from the user
     '''
     not_valid = True
     while not_valid:
@@ -71,7 +77,7 @@ def load_data(city, month, day):
     if month != 'all':
         # use the index of the months list to get the corresponding int
         month = months.index(month) + 1
-    
+
         # filter by month to create the new dataframe
         df = df[df['month'] == month]
 
@@ -83,7 +89,7 @@ def load_data(city, month, day):
     # some final data manipulation needed for statistics
     df['st_hour'] = df['Start Time'].dt.hour
     df['station_combo'] = df['Start Station'] + " to " + df['End Station']
-    
+
     return df
 
 def see_data(df):
@@ -133,9 +139,9 @@ def station_stats(df):
 
 
 def split_seconds(ttl_seconds):
-    ''' Breaks down seconds into number of hours, minutes and remaining seconds 
+    ''' Breaks down seconds into number of hours, minutes and remaining seconds
         Args: Total amount of seconds
-        Returns: Hours, Minutes, Seconds 
+        Returns: Hours, Minutes, Seconds
     '''
     hours = ttl_seconds//3600
     minutes = (ttl_seconds//60) - (hours * 60)
@@ -162,7 +168,7 @@ def trip_duration_stats(df):
     print('-'*40)
 
 def print_cnt_dict(cnt_dict, header=""):
-    ''' Prints key and values in dictionary, formatted for easier reading 
+    ''' Prints key and values in dictionary, formatted for easier reading
         Args: the dictionary, optional header
         Returns: Does not return, only prints
     '''
